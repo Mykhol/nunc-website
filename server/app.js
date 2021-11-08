@@ -16,12 +16,12 @@ app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
 
 // Add static serve for client page
-app.use(express.static(path.join(__dirname, '../client/build-latest')))
+app.use(express.static(path.join(__dirname, '../client/build')))
 app.use('/', require('./routes/MainRouter.js'))
 
 // Send back to client side home if URL was not found
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/../client/build-latest/index.html'))
+  res.sendFile(path.join(__dirname + '/../client/build/index.html'))
 })
 
 // catch 404 and forward to error handler

@@ -1,14 +1,15 @@
-import React from 'react';
-import MainRouter from './MainRouter';
+import React from 'react'
+import MainRouter from './MainRouter'
 
-import 'normalize.css';
-import '../styling/style.scss';
+import 'normalize.css'
+import '../styling/style.scss'
+import { ThemeProvider } from 'styled-components'
+import theme from '../components/Theme'
 
-
-export default function App() {
+export default function App () {
   return (
-    <React.Fragment>
+    <ThemeProvider theme={theme}>
       <MainRouter />
-    </React.Fragment>
+    </ThemeProvider>
   )
 }
